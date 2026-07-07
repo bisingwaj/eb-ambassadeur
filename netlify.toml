@@ -1,0 +1,30 @@
+[build]
+  publish = "."
+
+# ─── En-têtes de sécurité globaux ────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options            = "DENY"
+    X-Content-Type-Options     = "nosniff"
+    Referrer-Policy            = "strict-origin-when-cross-origin"
+    Permissions-Policy         = "camera=(), microphone=(), geolocation=()"
+    X-XSS-Protection           = "1; mode=block"
+
+# ─── Cache : HTML → jamais mis en cache (toujours la dernière version) ────────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ─── Cache : assets JS (versionnés) → 1 an ───────────────────────────────────
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ─── Fallback 404 → page d'accueil (app SPA) ─────────────────────────────────
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
