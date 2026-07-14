@@ -1,0 +1,3 @@
+# Ne jamais déployer le formulaire ni les anciens fichiers :
+# seule la page « Bientôt » (index.html) doit être en ligne.
+archive/
