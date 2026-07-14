@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Étoile Bleue — Bientôt</title>
+<meta name="description" content="Étoile Bleue arrive bientôt chez vous. Service d'aide médicale urgente — République Démocratique du Congo.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161616" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 61.8,38.2 96.6,38.2 68.4,58.8 79.4,92 50,71.4 20.6,92 31.6,58.8 3.4,38.2 38.2,38.2' fill='%230f62fe'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#161616;
+    --ink-70:#525252;
+    --ink-40:#8d8d8d;
+    --line:#e0e0e0;
+    --accent:#0f62fe;
+    --navy:#0a2452;
+    --grid:38px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#161616;
+      --ink:#f4f4f4;
+      --ink-70:#a8a8a8;
+      --ink-40:#6f6f6f;
+      --line:#393939;
+      --accent:#4589ff;
+      --navy:#78a9ff;
+    }
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+  }
+  /* fin liseré supérieur — signature Carbon */
+  .rule-top{height:4px;background:var(--accent);width:100%}
+
+  .frame{
+    flex:1;
+    width:100%;
+    max-width:1280px;
+    margin:0 auto;
+    padding:40px 32px;
+    display:grid;
+    grid-template-rows:auto 1fr auto;
+    /* léger repère de grille suisse en arrière-plan */
+  }
+
+  /* ── En-tête ── */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding-bottom:28px;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand svg{width:26px;height:26px;display:block}
+  .brand .name{
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:-.01em;
+  }
+  .index-marker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    color:var(--ink-40);
+    text-align:right;
+    line-height:1.5;
+  }
+
+  /* ── Bloc central ── */
+  main{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:64px 0;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:28px;
+  }
+  .eyebrow .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 0 var(--accent);
+    animation:pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(15,98,254,.4)}
+    70%{box-shadow:0 0 0 9px rgba(15,98,254,0)}
+    100%{box-shadow:0 0 0 0 rgba(15,98,254,0)}
+  }
+  @media (prefers-reduced-motion: reduce){ .eyebrow .dot{animation:none} }
+
+  h1{
+    font-weight:300;
+    font-size:clamp(40px,8.2vw,92px);
+    line-height:1.02;
+    letter-spacing:-.028em;
+    max-width:16ch;
+  }
+  h1 .accent{font-weight:600;color:var(--ink)}
+  h1 .soon{
+    display:block;
+    color:var(--accent);
+    font-weight:600;
+  }
+  .lede{
+    margin-top:36px;
+    max-width:46ch;
+    font-size:clamp(16px,2.2vw,19px);
+    line-height:1.6;
+    font-weight:400;
+    color:var(--ink-70);
+  }
+
+  /* ── Pied ── */
+  footer{
+    padding-top:28px;
+    border-top:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--ink-40);
+  }
+  footer .r{text-align:right}
+
+  @media (max-width:640px){
+    .frame{padding:28px 20px}
+    main{padding:44px 0;min-width:100%}
+    .index-marker .hide-s{display:none}
+    .meta .cell{padding-right:16px}
+  }
+</style>
+</head>
+<body>
+  <div class="rule-top"></div>
+  <div class="frame">
+
+    <header>
+      <div class="brand">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,5 61.8,38.2 96.6,38.2 68.4,58.8 79.4,92 50,71.4 20.6,92 31.6,58.8 3.4,38.2 38.2,38.2" fill="var(--navy)"/></svg>
+        <span class="name">Étoile&nbsp;Bleue</span>
+      </div>
+      <div class="index-marker">
+        01&nbsp;/&nbsp;01<br>
+        <span class="hide-s">EN PRÉPARATION</span>
+      </div>
+    </header>
+
+    <main>
+      <span class="eyebrow"><span class="dot"></span>Bientôt disponible</span>
+      <h1><span class="accent">Étoile Bleue</span> arrive <span class="soon">bientôt chez vous.</span></h1>
+      <p class="lede">Le service d'aide médicale urgente de la République Démocratique du Congo se prépare. Une coordination des secours, pensée pour être à votre écoute, arrive.</p>
+    </main>
+
+    <footer>
+      <span>© 2026 ÉTOILE BLEUE · RDC</span>
+      <span class="r">SERVICE D'AIDE MÉDICALE URGENTE</span>
+    </footer>
+
+  </div>
+</body>
+</html>

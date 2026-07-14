@@ -1,29 +1,24 @@
+# ── Netlify · Étoile Bleue — page « Bientôt » uniquement ─────────────────────
+# Seul le dossier dist/ est publié : rien d'autre n'est accessible en ligne.
 [build]
-  publish = "."
+  publish = "dist"
 
-# ─── En-têtes de sécurité globaux ────────────────────────────────────────────
+# En-têtes de sécurité globaux
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options            = "DENY"
-    X-Content-Type-Options     = "nosniff"
-    Referrer-Policy            = "strict-origin-when-cross-origin"
-    Permissions-Policy         = "camera=(), microphone=(), geolocation=()"
-    X-XSS-Protection           = "1; mode=block"
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "camera=(), microphone=(), geolocation=()"
 
-# ─── Cache : HTML → jamais mis en cache (toujours la dernière version) ────────
+# HTML toujours frais
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# ─── Cache : assets JS (versionnés) → 1 an ───────────────────────────────────
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# ─── Fallback 404 → page d'accueil (app SPA) ─────────────────────────────────
+# Toute URL (même devinée) → la page « Bientôt ». Aucune autre page n'existe.
 [[redirects]]
   from   = "/*"
   to     = "/index.html"
