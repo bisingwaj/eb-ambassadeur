@@ -140,6 +140,33 @@
     color:var(--ink-70);
   }
 
+  /* ── Bouton primaire — style IBM Carbon (rectangulaire, flèche) ── */
+  .cta{
+    margin-top:44px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:56px;
+    min-height:52px;
+    padding:14px 18px;
+    background:#0f62fe;
+    color:#ffffff;
+    text-decoration:none;
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:16px;
+    font-weight:400;
+    letter-spacing:.005em;
+    border:2px solid transparent;
+    transition:background .11s cubic-bezier(.2,0,.38,.9);
+  }
+  .cta:hover{background:#0353e9}
+  .cta:active{background:#002d9c}
+  .cta:focus-visible{outline:none;border-color:#ffffff;box-shadow:0 0 0 4px #0f62fe}
+  .cta svg{width:18px;height:18px;flex-shrink:0}
+  @media (max-width:480px){
+    .cta{display:flex;width:100%;gap:16px}
+  }
+
   /* ── Pied ── */
   footer{
     padding-top:28px;
@@ -183,6 +210,10 @@
       <span class="eyebrow"><span class="dot"></span>Bientôt disponible</span>
       <h1><span class="accent">Étoile Bleue</span> arrive <span class="soon">bientôt chez vous.</span></h1>
       <p class="lede">Le service d'aide médicale urgente de la République Démocratique du Congo se prépare. Une coordination des secours, pensée pour être à votre écoute, arrive.</p>
+      <a class="cta" href="https://www.ambassadeurs.199.cd" rel="noopener">
+        Devenir ambassadeur communautaire
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </main>
 
     <footer>
